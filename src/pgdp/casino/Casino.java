@@ -15,7 +15,7 @@ public class Casino {
 		// Here is a card deck for your games :)
 		// Remember for testing you can use seeds:
 		// CardDeck deck = CardDeck.getDeck(420);
-		//CardDeck deck = CardDeck.getDeck(420);
+		CardDeck deck = CardDeck.getDeck();
 		// TODO
 		System.out.println("Welcome to Pengu-BlackJack!");
 		int tokens = 1000; //Startkapital

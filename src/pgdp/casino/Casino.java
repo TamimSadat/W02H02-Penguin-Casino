@@ -8,7 +8,6 @@ public class Casino {
 
 	public static void main(String[] args) {
 		penguBlackJack();
-
 	}
 
 	public static void penguBlackJack() {
@@ -16,14 +15,14 @@ public class Casino {
 		// Here is a card deck for your games :)
 		// Remember for testing you can use seeds:
 		// CardDeck deck = CardDeck.getDeck(420);
-		CardDeck deck = CardDeck.getDeck(420);
+		//CardDeck deck = CardDeck.getDeck(420);
 		// TODO
 		System.out.println("Welcome to Pengu-BlackJack!");
 		int tokens = 1000; //Startkapital
 		while (tokens > 0) {
 			System.out.println("(1) Start a game or (2) exit");
 			int input = readInt();
-			while (input != 2 && input != 1) {
+			while (input != 2 && input != 1) { //fehlerhafte Eingabe
 				System.out.println("What?!");
 				input = readInt();
 			}
@@ -62,7 +61,7 @@ public class Casino {
 								sumOfCards = sumOfCards + card;
 								KartenNr++;
 							}
-							System.out.println("Current⎵standing: " + sumOfCards);
+							System.out.println("Current standing: " + sumOfCards);
 							if (sumOfCards >= 21) {
 								break;
 							}

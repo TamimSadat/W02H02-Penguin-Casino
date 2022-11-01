@@ -96,6 +96,7 @@ public class Casino {
 									dealerSumOfCards = dealerSumOfCards + card;
 									dealerKartenNr++;
 								}
+								System.out.println("Dealer: " + dealerSumOfCards);
 							}
 							System.out.println("Dealer: " + dealerSumOfCards);
 							if (dealerSumOfCards > 21) {

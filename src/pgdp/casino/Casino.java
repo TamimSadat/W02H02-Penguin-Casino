@@ -89,16 +89,16 @@ public class Casino {
 						else { //Dealer spielt mit, wenn Summe der Werte des Spielers unter 21 und den ZUg beendet
 							int dealerKartenNr = 1;
 							int dealerSumOfCards = 0;
+							System.out.println("Dealer cards:");
 							while (dealerSumOfCards < sumOfCards || dealerSumOfCards < 21) {
-								System.out.println("Dealer cards:");
 								for (i = 0; i < 2; i++) {
 									int card = deck.drawCard();
 									System.out.println(dealerKartenNr + " : " + card);
 									dealerSumOfCards = dealerSumOfCards + card;
 									dealerKartenNr++;
 								}
-								System.out.println("Dealer: " + dealerSumOfCards);
 							}
+							System.out.println("Dealer: " + dealerSumOfCards);
 							if (dealerSumOfCards > 21) {
 								tokens = tokens + einsatz;
 								System.out.println("You won " + einsatz + " tokens.");

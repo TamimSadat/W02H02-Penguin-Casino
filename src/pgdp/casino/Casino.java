@@ -31,6 +31,7 @@ public class Casino {
 				System.out.println("How much do you want to bet?");
 				int einsatz = readInt();
 				while (einsatz > tokens || einsatz < 1) { // Man darf nur so viel einsetzen wie man tokens zu verfügung hat
+					System.out.println("Your current balance: " + tokens);
 					System.out.println("How much do you want to bet?");
 					einsatz = readInt();
 				}

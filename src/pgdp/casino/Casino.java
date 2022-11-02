@@ -15,7 +15,7 @@ public class Casino {
 		// Here is a card deck for your games :)
 		// Remember for testing you can use seeds:
 		// CardDeck deck = CardDeck.getDeck(420);
-		CardDeck deck = CardDeck.getDeck();
+		CardDeck deck = CardDeck.getDeck(420);
 		// TODO
 		System.out.println("Welcome to Pengu-BlackJack!");
 		int tokens = 1000; //Startkapital
@@ -142,12 +142,12 @@ public class Casino {
 				else { //kein Gewinn
 					System.out.println("That's very very sad :(");
 				}
-				System.out.println("Thank you for playing. See you next time.");
+				System.out.print("Thank you for playing. See you next time.");
 				break;
 			}
 			if (tokens <= 0) {
 				System.out.println("Sorry, you are broke. Better Luck next time.");
-				System.out.println("Thank you for playing. See you next time.");
+				System.out.print("Thank you for playing. See you next time.");
 				break;
 			}
 			}
@@ -159,7 +159,7 @@ public class Casino {
 				else { //kein Gewinn
 					System.out.println("That's very very sad :(");
 				}
-				System.out.println("Thank you for playing. See you next time.");
+				System.out.print("Thank you for playing. See you next time.");
 				break;
 			}
 			else {

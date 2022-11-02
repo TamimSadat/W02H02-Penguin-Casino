@@ -22,27 +22,26 @@ public class Casino {
 		while (tokens > 0) {
 			System.out.println("(1) Start a game or (2) exit");
 			int input = readInt();
-			while (input != 2 && input != 1) { //fehlerhafte Eingabe
+			while (input != 2 && input != 1) { //bei fehlerhafter Eingabe Wiederholung
 				System.out.println("What?!");
 				input = readInt();
 			}
-			if (input == 1) {
+			if (input == 1) { //Starte Spiel
 				System.out.println("Your current balance: " + tokens);
 				System.out.println("How much do you want to bet?");
 				int einsatz = readInt();
-				while (einsatz > tokens || einsatz < 1) {
+				while (einsatz > tokens || einsatz < 1) { // Man darf nur so viel einsetzen wie man tokens zu verfügung hat
 					System.out.println("How much do you want to bet?");
 					einsatz = readInt();
 				}
-
-				System.out.println("Player cards:");
+				System.out.println("Player cards:"); // Du (der Spieler) bist an der Reihe
 				int KartenNr = 1;
 				int sumOfCards = 0;
 				int i = 0;
-				for (i = 0; i < 2; i++) {
+				for (i = 0; i < 2; i++) { // Am Anfang zieht der Spieler zwei Karten hintereinander
 					int card = deck.drawCard();
 					System.out.println(KartenNr + " : " + card);
-					sumOfCards = sumOfCards + card;
+					sumOfCards += card;
 					KartenNr++;
 				}
 				System.out.println("Current standing: " + sumOfCards);
@@ -89,14 +88,13 @@ public class Casino {
 							int dealerKartenNr = 1;
 							int dealerSumOfCards = 0;
 							System.out.println("Dealer cards:");
-							while (dealerSumOfCards < sumOfCards || dealerSumOfCards < 21) {
+							while (dealerSumOfCards < sumOfCards && dealerSumOfCards < 21) {
 								for (i = 0; i < 2; i++) {
 									int card = deck.drawCard();
 									System.out.println(dealerKartenNr + " : " + card);
 									dealerSumOfCards = dealerSumOfCards + card;
 									dealerKartenNr++;
 								}
-								System.out.println("Dealer: " + dealerSumOfCards);
 							}
 							System.out.println("Dealer: " + dealerSumOfCards);
 							if (dealerSumOfCards > 21) {
@@ -110,14 +108,34 @@ public class Casino {
 						}
 					}
 					else {// Wenn input 2
-						System.out.println("Your final balance: " + tokens);
+						int dealerKartenNr = 1;
+						int dealerSumOfCards = 0;
+						System.out.println("Dealer cards:");
+						while (dealerSumOfCards < sumOfCards && dealerSumOfCards < 21) {
+							for (i = 0; i < 2; i++) {
+								int card = deck.drawCard();
+								System.out.println(dealerKartenNr + " : " + card);
+								dealerSumOfCards = dealerSumOfCards + card;
+								dealerKartenNr++;
+							}
+						}
+						System.out.println("Dealer: " + dealerSumOfCards);
+						if (dealerSumOfCards > 21) {
+							tokens = tokens + einsatz;
+							System.out.println("You won " + einsatz + " tokens.");
+						}
+						else {
+							tokens = tokens - einsatz;
+							System.out.println("Dealer wins. You lost " + einsatz + " tokens.");
+
+						/*System.out.println("Your final balance: " + tokens);
 						if (tokens > 1000) { // echt positiver Gewinn
 							System.out.println("Wohooo! Ez profit! :D");
 						}
 						else { //kein Gewinn
 							System.out.println("That's very very sad :(");
 						}
-						System.out.println("Thank you for playing. See you next time.");
+						System.out.println("Thank you for playing. See you next time.");*/
 					}
 				}
 
@@ -138,6 +156,8 @@ public class Casino {
 				System.out.println("Thank you for playing. See you next time.");
 				break;
 			}
+			}
+
 		}
 
 	}

@@ -24,6 +24,7 @@ public class Casino {
 			int input = readInt();
 			while (input != 2 && input != 1) { //bei fehlerhafter Eingabe Wiederholung
 				System.out.println("What?!");
+				System.out.println("(1) Start a game or (2) exit");
 				input = readInt();
 			}
 			if (input == 1) { //Starte Spiel
@@ -31,7 +32,6 @@ public class Casino {
 				System.out.println("How much do you want to bet?");
 				int einsatz = readInt();
 				while (einsatz > tokens || einsatz < 1) { // Man darf nur so viel einsetzen wie man tokens zu verfügung hat
-					System.out.println("Your current balance: " + tokens);
 					System.out.println("How much do you want to bet?");
 					einsatz = readInt();
 				}
@@ -51,6 +51,7 @@ public class Casino {
 					input = readInt();
 					while (input != 2 && input != 1) {
 						System.out.println("What?!");
+						System.out.println("(1) draw another card or (2) stay");
 						input = readInt();
 					}
 					if (input == 1) {
@@ -72,6 +73,7 @@ public class Casino {
 							} else {
 								while (input != 2 && input != 1) {
 									System.out.println("What?!");
+									System.out.println("(1) draw another card or (2) stay");
 									input = readInt();
 								}
 							}
@@ -166,6 +168,7 @@ public class Casino {
 			else {
 				while (input != 2 && input != 1) { //bei fehlerhafter Eingabe Wiederholung
 					System.out.println("What?!");
+					System.out.println("(1) Start a game or (2) exit");
 					input = readInt();
 				}
 			}

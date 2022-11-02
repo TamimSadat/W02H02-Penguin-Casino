@@ -1,7 +1,5 @@
 package pgdp.casino;
 
-import org.jetbrains.annotations.Nullable;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -165,7 +163,7 @@ public class Casino {
 	}
 
 
-	public static @Nullable String readString() {
+	public static String readString() {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			return br.readLine();
